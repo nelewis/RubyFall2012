@@ -1,0 +1,314 @@
+
+C:\Projects\RubyFall2012_Master>irb
+irb(main):001:0> if true
+irb(main):002:1> puts "hi"
+irb(main):003:1> else
+irb(main):004:1* puts "nope"
+irb(main):005:1> end
+hi
+=> nil
+irb(main):006:0> puts "hi" if true
+hi
+=> nil
+irb(main):007:0> puts "hi" if n<10
+NameError: undefined local variable or method `n' for main:Object
+        from (irb):7
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):008:0> n=4
+=> 4
+irb(main):009:0> puts "hi" if n<10
+hi
+=> nil
+irb(main):010:0> puts "hi" if n>10
+=> nil
+irb(main):011:0> puts "hi" if ! n>10
+NoMethodError: undefined method `>' for false:FalseClass
+        from (irb):11
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):012:0> puts "hi" if ! (n > 10)
+hi
+=> nil
+irb(main):013:0> puts "hi" if ! (n < 10)
+=> nil
+irb(main):014:0> puts "hi" if ! (n > 10)
+hi
+=> nil
+irb(main):015:0> n
+=> 4
+irb(main):016:0> puts "hello" if n
+hello
+=> nil
+irb(main):017:0> puts "hello" if ! n
+=> nil
+irb(main):018:0> puts "hello" if nil
+=> nil
+irb(main):019:0> puts "hello" if false
+=> nil
+irb(main):020:0> puts "hello" unless 4>10
+hello
+=> nil
+irb(main):021:0> puts "hello" unless 4<10
+=> nil
+irb(main):022:0> puts "hello" if 5<10 and 5<10
+hello
+=> nil
+irb(main):023:0> puts "hello" if 5<10 and 8<10
+hello
+=> nil
+irb(main):024:0> puts "hello" if 5<10 && 8<10
+hello
+=> nil
+irb(main):025:0> 4<10 and 5>10
+=> false
+irb(main):026:0> 4<10 and 5<10
+=> true
+irb(main):027:0> true and true
+=> true
+irb(main):028:0> true and false
+=> false
+irb(main):029:0> false and true
+=> false
+irb(main):030:0> false and false
+=> false
+irb(main):031:0> 4<10 and 5>10
+=> false
+irb(main):032:0> n=4<10 and 5>10
+=> false
+irb(main):033:0> n
+=> true
+irb(main):034:0> n=(4<10 and 5>10)
+=> false
+irb(main):035:0> n=4<10 && 5>10
+=> false
+irb(main):036:0> n=(4<10 and 5>10)
+=> false
+irb(main):037:0> n
+=> false
+irb(main):038:0> n=4<10 && 5>10
+=> false
+irb(main):039:0> n
+=> false
+irb(main):040:0> true or true
+=> true
+irb(main):041:0> true or false
+=> true
+irb(main):042:0> false or false
+=> false
+irb(main):043:0> n
+=> false
+irb(main):044:0> n =4
+=> 4
+irb(main):045:0> n || = 19
+SyntaxError: (irb):45: syntax error, unexpected '='
+n || = 19
+      ^
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):046:0> n ||=19
+=> 4
+irb(main):047:0> n =19 unless n
+=> nil
+irb(main):048:0> t = 20 unless t
+=> 20
+irb(main):049:0> t
+=> 20
+irb(main):050:0> 4<10 ? puts "hi" : puts "nope"
+SyntaxError: (irb):50: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+4<10 ? puts "hi" : puts "nope"
+             ^
+(irb):50: syntax error, unexpected ':', expecting $end
+4<10 ? puts "hi" : puts "nope"
+                  ^
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):051:0> 4<10 ? puts "hi" : "nope"
+SyntaxError: (irb):51: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+4<10 ? puts "hi" : "nope"
+             ^
+(irb):51: syntax error, unexpected ':', expecting $end
+4<10 ? puts "hi" : "nope"
+                  ^
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):052:0> 4<10 ? puts("hi") : puts("nope")
+hi
+=> nil
+irb(main):053:0> 4>10 ? puts("hi") : puts("nope")
+nope
+=> nil
+irb(main):054:0> ternary operator ie conditional ? then else
+irb(main):055:0* end
+SyntaxError: (irb):54: syntax error, unexpected keyword_then
+ternary operator ie conditional ? then else
+                                      ^
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):056:0> i=0
+=> 0
+irb(main):057:0> while i<10
+irb(main):058:1> puts 1+=1
+irb(main):059:1> end
+SyntaxError: (irb):58: syntax error, unexpected tOP_ASGN, expecting keyword_end
+puts 1+=1
+        ^
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):060:0> while i<10
+irb(main):061:1> puts i+=1
+irb(main):062:1> end
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+=> nil
+irb(main):063:0> until i<10
+irb(main):064:1> puts i+=1
+irb(main):065:1> i=9 if i == 20
+irb(main):066:1> end
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+=> nil
+irb(main):067:0> ==20 stops an infinite loop
+SyntaxError: (irb):67: syntax error, unexpected tEQ
+==20 stops an infinite loop
+  ^
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):068:0> end
+SyntaxError: (irb):68: syntax error, unexpected keyword_end
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):069:0> i = 10
+=> 10
+irb(main):070:0> until i<10
+irb(main):071:1> puts i+=1
+irb(main):072:1> break if i==20
+irb(main):073:1> end
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+=> nil
+irb(main):074:0> break is smelly
+SyntaxError: (irb):74: Can't escape from eval with break
+        from (irb)
+irb(main):075:0> end
+SyntaxError: (irb):75: syntax error, unexpected keyword_end
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):076:0> 5.times {puts "h"}
+h
+h
+h
+h
+h
+=> 5
+irb(main):077:0> 5.times {puts i+=1}
+21
+22
+23
+24
+25
+=> 5
+irb(main):078:0> gets
+hi there
+=> "hi there\n"
+irb(main):079:0> gets makes you wait
+NameError: undefined local variable or method `wait' for main:Object
+        from (irb):79
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):080:0> end
+SyntaxError: (irb):80: syntax error, unexpected keyword_end
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):081:0> gets
+yoohoo
+=> "yoohoo\n"
+irb(main):082:0> gets.chomp
+yoohoo
+=> "yoohoo"
+irb(main):083:0> whats_i = case i
+irb(main):084:1> when 1<10
+irb(main):085:1> "i is <10"
+irb(main):086:1> when end
+SyntaxError: (irb):86: syntax error, unexpected keyword_end
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):087:0> whats_i = case i
+irb(main):088:1> when i<10
+irb(main):089:1> "i is <10"
+irb(main):090:1> when i>10
+irb(main):091:1> "i is >10"
+irb(main):092:1> end
+=> nil
+irb(main):093:0> whats_i
+=> nil
+irb(main):094:0> whats_i = case i
+irb(main):095:1> when (0...10)
+irb(main):096:1> "is is <10"
+irb(main):097:1> when (10...20)
+irb(main):098:1> "is is between 10 &20"
+irb(main):099:1> else
+irb(main):100:1* end
+=> nil
+irb(main):101:0> whats_i = case i
+irb(main):102:1> when (0...10)
+irb(main):103:1> "is is <10"
+irb(main):104:1> when (10...20)
+irb(main):105:1> "is is between 10 &20"
+irb(main):106:1> else
+irb(main):107:1*  "i is >20"
+irb(main):108:1> end
+=> "i is >20"
+irb(main):109:0> whats_i
+=> "i is >20"
+irb(main):110:0> whats_i(12)
+NoMethodError: undefined method `whats_i' for main:Object
+        from (irb):110
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):111:0> Fixnum === i
+=> true
+irb(main):112:0> i === Fixnum
+=> false
+irb(main):113:0> 25 === Fixnum
+=> false
+irb(main):114:0> (0..26) === i
+=> true
+irb(main):115:0> i === Fixnum
+=> false
+irb(main):116:0> 25 === Fixnum
+=> false
+irb(main):117:0> [24,25,26] ===i
+=> false
+irb(main):118:0> begin
+irb(main):119:1* raise "This is an error"
+irb(main):120:1> rescue => e
+irb(main):121:1> puts e
+irb(main):122:1> end
+This is an error
+=> nil
+irb(main):123:0> begin
+irb(main):124:1* raise "This is an error"
+irb(main):125:1> rescue NoMethodError=>e
+irb(main):126:1> puts e
+irb(main):127:1> end
+RuntimeError: This is an error
+        from (irb):124
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):128:0> # raised a message regardless
+irb(main):129:0* end
+SyntaxError: (irb):129: syntax error, unexpected keyword_end
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):130:0> begin
+irb(main):131:1* k
+irb(main):132:1>

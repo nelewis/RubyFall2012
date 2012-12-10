@@ -1,0 +1,25 @@
+C:\Sites>irb
+irb(main):001:0> begiin k
+NameError: undefined local variable or method `k' for main:Object
+        from (irb):1
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):002:0> begin
+irb(main):003:1* k
+irb(main):004:1> rescue => e
+irb(main):005:1> puts e
+irb(main):006:1> retry if k
+irb(main):007:1> end
+undefined local variable or method `k' for main:Object
+NameError: undefined local variable or method `k' for main:Object
+        from (irb):6:in `rescue in irb_binding'
+        from (irb):2
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):008:0> begin
+irb(main):009:1* k
+irb(main):010:1> rescue => e
+irb(main):011:1> puts e
+irb(main):012:1> retry e
+irb(main):013:1> end
+SyntaxError: (irb):12: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+        from C:/RailsInstaller/Ruby1.9.3/bin/irb:12:in `<main>'
+irb(main):014:0>

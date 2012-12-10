@@ -1,0 +1,88 @@
+# 
+# running rspec for worker.rb which does not exist yet
+# 
+C:\Projects\RubyFall2012\week9\exercises>rspec worker_spec.rb
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/site_ruby/1.9.1/rubygems/custom_require.rb:36:in `require': cannot load such file -
+- ./worker.rb (LoadError)
+        from C:/RailsInstaller/Ruby1.9.3/lib/ruby/site_ruby/1.9.1/rubygems/custom_require.rb:36:in `require'
+        from C:/Projects/RubyFall2012/week9/exercises/worker_spec.rb:1:in `<top (required)>'
+        from C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rspec-core-2.11.1/lib/rspec/core/configuration.rb:780:
+in `load'
+        from C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rspec-core-2.11.1/lib/rspec/core/configuration.rb:780:
+in `block in load_spec_files'
+        from C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rspec-core-2.11.1/lib/rspec/core/configuration.rb:780:
+in `map'
+        from C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rspec-core-2.11.1/lib/rspec/core/configuration.rb:780:
+in `load_spec_files'
+        from C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rspec-core-2.11.1/lib/rspec/core/command_line.rb:22:in
+ `run'
+        from C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rspec-core-2.11.1/lib/rspec/core/runner.rb:69:in `run'
+
+        from C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rspec-core-2.11.1/lib/rspec/core/runner.rb:8:in `block
+ in autorun'
+
+#
+# create worker.rb, then rerun test
+# 
+C:\Projects\RubyFall2012\week9\exercises>touch worker.rb
+
+C:\Projects\RubyFall2012\week9\exercises>rspec worker_spec.rb
+F
+
+Failures:
+
+  1) Worker should run some code
+     Failure/Error: Worker.work do
+     NoMethodError:
+       undefined method `work' for Worker:Class
+     # ./worker_spec.rb:6:in `block (2 levels) in <top (required)>'
+
+Finished in 0.015 seconds
+1 example, 1 failure
+
+Failed examples:
+
+rspec ./worker_spec.rb:4 # Worker should run some code
+
+#
+#stub out a method in worker.rb
+# 
+
+C:\Projects\RubyFall2012\week9\exercises>rspec worker_spec.rb
+.
+
+Finished in 0.029 seconds
+1 example, 0 failures
+
+#
+# implement something and rerun test so it fails, 
+#
+
+C:\Projects\RubyFall2012\week9\exercises>rspec worker_spec.rb
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rspec-core-2.11.1/lib/rspec/core/configuration.rb:780:in `load': C:
+/Projects/RubyFall2012/week9/exercises/worker_spec.rb:18: syntax error, unexpected keyword_end, expecting $end (SyntaxEr
+ror)
+        from C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rspec-core-2.11.1/lib/rspec/core/configuration.rb:780:
+in `block in load_spec_files'
+        from C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rspec-core-2.11.1/lib/rspec/core/configuration.rb:780:
+in `map'
+        from C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rspec-core-2.11.1/lib/rspec/core/configuration.rb:780:
+in `load_spec_files'
+        from C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rspec-core-2.11.1/lib/rspec/core/command_line.rb:22:in
+ `run'
+        from C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rspec-core-2.11.1/lib/rspec/core/runner.rb:69:in `run'
+
+        from C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/rspec-core-2.11.1/lib/rspec/core/runner.rb:8:in `block
+ in autorun'
+ 
+ #
+ # fix the test so it runs
+ #
+
+C:\Projects\RubyFall2012\week9\exercises>rspec worker_spec.rb
+..
+
+Finished in 0.07901 seconds
+2 examples, 0 failures
+
+C:\Projects\RubyFall2012\week9\exercises>

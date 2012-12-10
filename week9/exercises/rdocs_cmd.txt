@@ -1,0 +1,87 @@
+C:\Projects\RubyFall2012\week9\exercises>rdocs test.rb
+'rdocs' is not recognized as an internal or external command,
+operable program or batch file.
+
+#
+#  rdocs is a gemfile, so it must be installed
+#
+
+C:\Projects\RubyFall2012\week9\exercises>gem install rdoc
+Depending on your version of ruby, you may need to install ruby rdoc/ri data:
+
+<= 1.8.6 : unsupported
+ = 1.8.7 : gem install rdoc-data; rdoc-data --install
+ = 1.9.1 : gem install rdoc-data; rdoc-data --install
+>= 1.9.2 : nothing to do! Yay!
+Successfully installed rdoc-3.12
+1 gem installed
+Installing ri documentation for rdoc-3.12...
+Installing RDoc documentation for rdoc-3.12...
+
+#
+# Now it runs!
+# 
+C:\Projects\RubyFall2012\week9\exercises>rdoc test.rb
+Parsing sources...
+100% [ 1/ 1]  test.rb
+
+Generating Darkfish format into C:/Projects/RubyFall2012/week9/exercises/doc...
+
+Files:      1
+
+Classes:    1 (0 undocumented)
+Modules:    0 (0 undocumented)
+Constants:  0 (0 undocumented)
+Attributes: 0 (0 undocumented)
+Methods:    1 (0 undocumented)
+
+Total:      2 (0 undocumented)
+100.00% documented
+
+Elapsed: 0.3s
+
+C:\Projects\RubyFall2012\week9\exercises>ls
+doc  test.rb  worker.rb  worker_spec.rb
+
+C:\Projects\RubyFall2012\week9\exercises>cd doc
+
+#
+# can open the index.html !
+# 
+
+C:\Projects\RubyFall2012\week9\exercises\doc>ls
+Thing.html  created.rid  images  index.html  js  rdoc.css  table_of_contents.html
+
+#
+# If you type rdoc with no parms it runs agains all *.rb
+#
+
+C:\Projects\RubyFall2012\week9\exercises>rdoc
+Parsing sources...
+100% [ 3/ 3]  worker_spec.rb
+
+Generating Darkfish format into C:/Projects/RubyFall2012/week9/exercises/doc...
+
+Files:      3
+
+Classes:    2 (1 undocumented)
+Modules:    0 (0 undocumented)
+Constants:  0 (0 undocumented)
+Attributes: 0 (0 undocumented)
+Methods:    2 (1 undocumented)
+
+Total:      4 (2 undocumented)
+ 50.00% documented
+
+Elapsed: 0.3s
+
+C:\Projects\RubyFall2012\week9\exercises>
+
+
+
+
+
+
+
+
+
